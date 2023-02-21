@@ -1,6 +1,6 @@
 #!/bin/bash
 # What to backup. 
-backup_files="/home/deck/.config/"
+backup_files="~/.config/"
 
 # Where to backup to.
 dest="~/ludusavi-backup/"
@@ -24,7 +24,7 @@ flatpak run com.github.mtkennerly.ludusavi backup --force
 #rsync -avv /$dest/ rsync://xxx.xxx/backup/deck/
 
 ### Delete tgz backups older then 5 days
-find $dest/ -name "*.tgz" -maxdepth 1 -mtime +5 -delete
+find $dest/ -maxdepth 1 -name "*.tgz" -mtime +5 -delete
 
 # Print end status message.
 echo
